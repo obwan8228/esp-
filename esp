@@ -1459,22 +1459,36 @@ local Options = MiscOptions
 
     Esp.Loop = RunService:BindToRenderStep("Run Loop", 400, Esp.Update)
 
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
 local upd = function()
     for key, value in pairs(MiscOptions) do
         Esp.RefreshElements(key, value)
     end
 end
-for _, player in Players:GetPlayers() do
-    if player ~= Players.LocalPlayer then
+
+-- Existing players
+for _, player in ipairs(Players:GetPlayers()) do
+    if player ~= LocalPlayer then
         Esp.CreateObject(player)
-        upd()
     end
 end
+upd()
+
+-- New players
 Players.PlayerAdded:Connect(function(player)
+    if player == LocalPlayer then return end
+
+    -- wait for character (VERY IMPORTANT)
+    player.CharacterAdded:Wait()
+
     Esp.CreateObject(player)
     upd()
 end)
+
+-- Leaving players
 Players.PlayerRemoving:Connect(function(player)
     Esp.RemovePlayer(player)
     upd()
-end
+end)
