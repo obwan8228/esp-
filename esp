@@ -97,59 +97,37 @@ local Flags = {
             Fonts[name] = Font.new(RegisteredFont, Enum.FontWeight.Regular, Enum.FontStyle.Normal)
         end
     end
+
+-- MUST BE FIRST
 local MiscOptions = {
-    ["Enabled"] = true;
-    ["Render Distance"] = 10000; 
-    -- Chams   
-    ["ChamsEnabled"] = false; 
-    ["Chams Fill"] = { Color = rgb(0, 255, 255), Transparency = 0.9 };
-    ["Chams Outline"] = { Color = rgb(255, 0, 0), Transparency = 0.4 };
+    ["Enabled"] = true,
+    ["Render Distance"] = 10000,
 
-     -- Boxes
-    ["Boxes"] = true;
-    ["BoxType"] = "Corner";
-    ["Box Gradient 1"] = { Color = rgb(255, 255, 255), Transparency = 0.9 };
-    ["Box Gradient 2"] = { Color = rgb(119, 120, 255), Transparency = 0.3 };
-    ["Box Gradient Rotation"] = 180;
-    ["Box Fill"] = true; 
-    ["Box Fill 1"] = { Color = rgb(119, 120, 255), Transparency = 0.3 };
-    ["Box Fill 2"] = { Color = rgb(0, 0, 0), Transparency = 0.3 };
-    ["Box Fill Rotation"] = 180;
+    -- Chams
+    ["ChamsEnabled"] = false,
+    ["Chams Fill"] = { Color = Color3.fromRGB(0,255,255), Transparency = 0.9 },
+    ["Chams Outline"] = { Color = Color3.fromRGB(255,0,0), Transparency = 0.4 },
 
-    ["Healthbar"] = true; 
-    ["Healthbar_Position"] = "Left"; 
-    ["Healthbar_Number"] = true; 
-    ["Healthbar_Low"] = { Color = rgb(255, 0, 0), Transparency = 1 }; --
-    ["Healthbar_Medium"] = { Color = rgb(119, 120, 255), Transparency = 1 }; --
-    ["Healthbar_Animations"] = true; 
-    ["Healthbar_High"] = { Color = rgb(0, 255, 0), Transparency = 1 }; -- 
-    ["Healthbar_Font"] = "ProggyClean";
-    ["Healthbar_Text_Size"] = 5;
-    ["Healthbar_Thickness"] = 1;
-    ["Healthbar_Tween"] = true;
-    ["Healthbar_EasingStyle"] = "Circular"; 
-    ["Healthbar_EasingDirection"] = "InOut"; 
-    ["Healthbar_Easing_Speed"] = 1.5;
+    -- Boxes
+    ["Boxes"] = true,
+    ["BoxType"] = "Corner",
+    ["Box Gradient 1"] = { Color = Color3.fromRGB(255,255,255), Transparency = 0.9 },
+    ["Box Gradient 2"] = { Color = Color3.fromRGB(119,120,255), Transparency = 0.3 },
+    ["Box Fill"] = true,
+    ["Box Fill Rotation"] = 180,
 
-    -- Text Based Elements
-    ["Name_Text"] = true; 
-    ["Name_Text_Color"] = { Color = rgb(255, 255, 255) };
-    ["Name_Text_Position"] = "Top";
-    ["Name_Text_Font"] = "ProggyClean";
-    ["Name_Text_Size"] = 6;
-    
-    ["Distance_Text"] = true; 
-    ["Distance_Text_Color"] = { Color = rgb(255, 255, 255) };
-    ["Distance_Text_Position"] = "Bottom";
-    ["Distance_Text_Font"] = "ProggyClean";
-    ["Distance_Text_Size"] = 6;
+    -- Healthbar
+    ["Healthbar"] = true,
+    ["Healthbar_Position"] = "Left",
+    ["Healthbar_Text_Size"] = 5,
+    ["Healthbar_Thickness"] = 1,
 
-    ["Weapon_Text"] = true,
-    ["Weapon_Text_Color"] = { Color = rgb(255, 255, 255) };
-    ["Weapon_Text_Position"] = "Top";
-    ["Weapon_Text_Font"] = "ProggyClean";
-    ["Weapon_Text_Size"] = 5;
-};  
+    -- Text
+    ["Name_Text"] = true,
+    ["Name_Text_Size"] = 6,
+    ["Distance_Text"] = true,
+    ["Distance_Text_Size"] = 6,
+}
 
 local Options = MiscOptions
 
